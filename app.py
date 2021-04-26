@@ -1,7 +1,7 @@
 import MySQLdb
 import pymysql
 from flask import Flask, jsonify, redirect, render_template, request, url_for, session
-import psycopg2
+#import psycopg2
 import re
 from flask_mysqldb import MySQL
 
@@ -11,7 +11,7 @@ app.secret_key = 'your secret key'
 
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'Current1'
+app.config['MYSQL_PASSWORD'] = 'monica'
 app.config['MYSQL_DB'] = 'geeklogin'
 
 mysql = MySQL(app)
@@ -81,6 +81,20 @@ def register():
         msg = 'Please fill out the form !'
     return render_template('register.html', msg=msg)
 
+
+@app.route('/dishes')
+def dishes():
+    try:
+        conn = mysql.connect()
+        cursor = conn.cursor(pymysql.cursors.DictCursor)
+        cursor.execute("SELECT * FROM dishes")
+        rows = cursor.fetchall()
+        return render_template('dishes.html', dishes=rows)
+    except Exception as e:
+        print(e)
+    finally:
+        cursor.close()
+        conn.close()
 
 @app.route('/add', methods=['POST'])
 def add_product_to_cart():
