@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Categories{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style>
+        body {
+            background-image: url({{ url_for('static', filename='Images/jalebi.jpg') }});
+        }
+
+    </style>
+{% endblock %}
+{% include 'Shared/HeaderContent.html' %}
+{% block content %}
+    <div class="row">
+            {% if data %}
+                {% for category in data %}
+                    <div class="col-md-4">
+                        <div class="card" style="width:400px">
+                            <img class="card-img-top" src="{{ category.imagePath }}"
+                                 alt="Card image"
+                                 style="width:100%">
+                            <div class="card-body">
+                                <h4 class="card-title">{{ category.name }}</h4>
+                                <a href="/itemsdishes?id={{ category.id }}" class="btn btn-primary">Click Here</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+    </div>
+
+{% endblock %}

@@ -1,0 +1,193 @@
+/* Made with love by Mutiullah Samim*/
+
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+html, body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+}
+
+.container {
+    height: 100%;
+    align-content: center;
+}
+
+div#cardLogin {
+    height: 370px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 400px;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.social_icon span {
+    font-size: 60px;
+    margin-left: 10px;
+    color: #FFC312;
+}
+
+.social_icon span:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.card-header h3 {
+    color: white;
+}
+
+.social_icon {
+    position: absolute;
+    right: 20px;
+    top: -45px;
+}
+
+.input-group-prepend span {
+    width: 50px;
+    background-color: #FFC312;
+    color: black;
+    border: 0 !important;
+}
+
+input:focus {
+    outline: 0 0 0 0 !important;
+    box-shadow: 0 0 0 0 !important;
+
+}
+
+.remember {
+    color: white;
+}
+
+.remember input {
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+    margin-right: 5px;
+}
+
+.login_btn {
+    color: black;
+    background-color: #FFC312;
+    width: 100px;
+}
+
+.login_btn:hover {
+    color: black;
+    background-color: white;
+}
+
+.links {
+    color: white;
+}
+
+.links a {
+    margin-left: 4px;
+}
+
+.loginChart {
+    position: relative;
+    top: 150px;
+}
+
+div#footer {
+    position: fixed;
+    width: 100%;
+    line-height: 40px;
+    font-size: 1.0em;
+    text-align: center;
+    bottom: 0;
+    color: #ffff;
+    height: 40px;
+    background-color: black;
+}
+
+div#cardRegister {
+    width: 44rem;
+    position: relative;
+    right: 34%;
+    top: 24%;
+}
+
+.msg {
+    color: white;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+input#RegisterBtn {
+    position: relative;
+    bottom: 15px;
+}
+
+a#labelUser {
+    position: relative;
+    left: 100px;
+}
+
+div#content {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: auto;
+    height: auto;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.row.tableDishes {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+button#CartButton {
+    border: 3px solid #fcad26;
+    border-radius: 50px;
+    color: #fcad26;
+    background-color: white;
+    padding: 15px 35px;
+    margin: 0 10px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+button#CartButton:hover {
+    border-radius: 50px;
+    background: #fcad26;
+    color: #fff;
+}
+
+button#CartButton.cart:after {
+    content: '\f07a';
+    font-family: FontAwesome;
+    padding-left: 10px;
+}
+
+label#priceItem {
+    padding-top: 7px;
+}
+
+label#TotalItem {
+    padding-top: 6px;
+}

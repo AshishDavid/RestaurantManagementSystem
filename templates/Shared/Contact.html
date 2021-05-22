@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}Contact{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style>
+        body {
+            background-image: url({{ url_for('static', filename='Images/jalebi.jpg') }});
+        }
+
+    </style>
+{% endblock %}
+{% include 'Shared/HeaderContent.html' %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="card-group">
+                <div class="card" style="flex-grow: 2">
+                    <div class="card-block">
+                        <h4 class="card-title">Contact us</h4>
+                    </div>
+                    <div class="card-body">
+                        <form action="{{ url_for('contact') }}" method="post">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" class="form-control" id="nameContact" name="nameContact"
+                                       placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label>Email address</label>
+                                <input type="email" class="form-control" id="emailcontact" name="emailcontact"
+                                       placeholder="name@example.com">
+                            </div>
+                            <div class="form-group">
+                                {% if session['name'] %}
+                                    <input id="userlogged" name="userlogged" type="hidden" value="True">
+                                {% else %}
+                                    <input id="userlogged" name="userlogged" type="hidden" value="False">
+                                {% endif %}
+                                <label for="comment">Message:</label>
+                                <textarea class="form-control" rows="5" id="messageDescription"
+                                          name="messageDescription" style="resize: none;"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <input id="contactUs" type="submit" value="Send" class="btn float-right login_btn">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+
+{% endblock %}

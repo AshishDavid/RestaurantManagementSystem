@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Feedback{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style>
+        body {
+            background-image: url({{ url_for('static', filename='Images/jalebi.jpg') }});
+        }
+
+    </style>
+{% endblock %}
+{% include 'Shared/HeaderContent.html' %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="card-group">
+                <div class="card" style="flex-grow: 2">
+                    <div class="card-block">
+                        <h4 class="card-title">Tell us your feedback</h4>
+                    </div>
+                    <div class="card-body">
+                        <form action="{{ url_for('feedback') }}" method="post">
+                            <div class="form-group">
+                                {% if session['name'] %}
+                                    <input id="userlogged" name="userlogged" type="hidden" value="True">
+                                {% else %}
+                                    <input id="userlogged" name="userlogged" type="hidden" value="False">
+                                {% endif %}
+                                <label for="comment">Comment:</label>
+                                <textarea class="form-control" rows="5" id="feedbackDescription"
+                                          name="feedbackDescription" style="resize: none;"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <input id="SendFeeback" type="submit" value="Send" class="btn float-right login_btn">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+
+{% endblock %}

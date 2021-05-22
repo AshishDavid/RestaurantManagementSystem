@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Team{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style>
+        body {
+            background-image: url({{ url_for('static', filename='Images/jalebi.jpg') }});
+        }
+
+    </style>
+{% endblock %}
+{% include 'Shared/HeaderContent.html' %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="card-group">
+                <div class="card" style="flex-grow: 2">
+                    <div class="card-block">
+                        <h4 class="card-title">Our Team</h4>
+                    </div>
+                    <div class="card-body">
+                        <img class="d-block w-100"
+                             src="{{ url_for('static', filename='images/teamhindu.jpg') }}" >
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+
+{% endblock %}

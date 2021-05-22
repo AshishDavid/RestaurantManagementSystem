@@ -1,0 +1,115 @@
+<html>
+<head>
+    <style>
+        body {
+            font-family: latha;
+            color: white;
+            background-image: url({{ url_for('static', filename='Images/biryani.jpg') }});
+            background-size: cover;
+        }
+
+        .box {
+            width: 900px;
+            float: right;
+            border: 1px solid none;
+        }
+
+        .box ul li {
+            width: 120px;
+            float: left;
+            margin: 10px auto;
+            text-align: center;
+        }
+
+        .box ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .box ul li:hover {
+            background-color: green;
+        }
+
+        .box ul li a:hover {
+            color: white;
+        }
+
+        .wd {
+            width: 400px;
+            height: 739px;
+            background-color: black;
+            opacity: 0.9;
+            padding: 55px;
+        }
+
+        .wd h1 {
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: 100px;
+        }
+
+        .wd h4 {
+            text-align: justify;
+            color: darkgray;
+            font-weight: normal;
+        }
+
+        .wd h2 {
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: 40px auto;
+        }
+
+        .opt form, input[ type = "Button"] {
+            background-color: Black;
+            color: white;
+            padding: 20px;
+            margin: -14px auto;
+            padding-left: 50px;
+            padding-right: 50px;
+            text-align: center;
+        }
+
+        form, input[type = "Button"]:hover {
+            background-color: green;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <ul type="none">
+        <li><a href="">Home </a></li>
+        <li><a href="login">Login</a></li>
+        <li><a href="categories">Menu </a></li>
+        <li><a href="">Cart</a></li>
+        <li><a href="team">Team</a></li>
+        <li><a href="contact">Contact</a></li>
+        <li><a href="feedback">Feedback</a></li>
+    </ul>
+</div>
+
+<div class="wd">
+    {% if session['name'] %}
+        <a id="Logout" href="logout"><h3><span style="color: white">Logout</span></h3></a>
+    {% endif %}
+    <h1>Welcome!</h1>
+    {% if session['name'] %}
+        <h2>{{ session['name'] }}</h2>
+    {% endif %}
+    <h4>Global Binge is a unique gift of love from the very heart of India.it presents a unique collection of Indian
+        delicacies combined with the best traditions of European and Mediterranean cuisine.The aroma of fresh Indian
+        herbs,spices and only natural ingredients and their correct combination will satisfy the most demanding taste.We
+        assure you that having joined the magic of bygone times, you will want to return to us again and again.</h4>
+    <h2> RESERVATION </h2>
+    <div class="opt">
+        <form action="" method="post">
+            <input type="Button" value="Start Now">
+        </form>
+    </div>
+</div>
+</body>
+</html>
+
+
+

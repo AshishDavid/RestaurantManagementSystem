@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+    {% block head %}
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/main.css') }}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+              crossorigin="anonymous">
+        <!--Fontawesome CDN-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+              integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+              crossorigin="anonymous">
+        <link rel="stylesheet"
+              href="{{ url_for('static', filename='material-icon/css/material-design-iconic-font.min.css') }}">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+                crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+                integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+                crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename = 'JS/login/login.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename = 'JS/cart/cart.js') }}"></script>
+
+
+        <title>{% block title %}{% endblock %} - Restaurant</title>
+    {% endblock %}
+</head>
+<body>
+<div id="content">{% block content %}{% endblock %}</div>
+</body>
+<div id="footer">
+    {% block footer %}
+        &copy; Copyright 2021.
+    {% endblock %}
+</div>
+</html>

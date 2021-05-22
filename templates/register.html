@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% block title %}Register{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+
+    <style>
+        body {
+            background-image: url({{ url_for('static', filename='images/loginImage.jpg') }});
+            background-size: cover;
+        }
+    </style>
+
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+
+            <div id="cardRegister" class="card">
+                <div class="card-header">Register Form</div>
+                <form action="{{ url_for('register') }}" method="post">
+                    <div id="cardBody" class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <div class="input-group form-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-address-card"></i></span>
+                                    </div>
+                                    <input type="text" id="firstname" name="firstname" class="form-control"
+                                           placeholder="firstname" required>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group form-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-address-card"></i></span>
+                                    </div>
+                                    <input type="text" id="lastname" name="lastname" class="form-control"
+                                           placeholder="lastname" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="input-group form-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                    </div>
+                                    <input type="text" id="username" name="username" class="form-control"
+                                           placeholder="username">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group form-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                    </div>
+                                    <input type="password" id="password" name="password" class="form-control"
+                                           placeholder="password" required>
+                                    <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="input-group form-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-tablet"></i></span>
+                                    </div>
+                                    <input type="text" id="telephone" name="telephone" class="form-control"
+                                           placeholder="telephone" required>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group form-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-envelope-open"></i></span>
+                                    </div>
+                                    <input type="email" id="email" name="email" class="form-control"
+                                           placeholder="email" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-location-arrow"></i></span>
+                            </div>
+                            <input type="text" id="address" name="address" class="form-control"
+                                   placeholder="address" required>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="form-group">
+                            <a id="BackBtn" href="/" class="btn float-left login_btn">Home</a>
+                        </div>
+                        <div class="form-group">
+                            <input id="RegisterBtn" type="submit" value="Register" class="btn float-right login_btn">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+
+
+
+
+{% endblock %}
