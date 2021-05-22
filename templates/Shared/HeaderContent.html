@@ -17,11 +17,16 @@
             <!-- Links -->
             <div class="collapse navbar-collapse justify-content-end" id="nav-content">
                 <ul class="navbar-nav">
+                {% if session['accountType'] == 2 %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="manage">Manage Catalogs</a>
+                    </li>
+                {% endif %}
                     <li class="nav-item">
                         <a class="nav-link" href="categories">Menu</a>
                     </li>
                     <li class="nav-item">
-                        <a id="cart" class="nav-link" href="#">Cart<i class="fa fa-shopping-cart"></i></a>
+                        <a id="cart" class="nav-link" href="cart">Cart<i class="fa fa-shopping-cart"></i></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="team">Team</a>

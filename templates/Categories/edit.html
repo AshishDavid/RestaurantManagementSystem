@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}Edit{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style>
+        body {
+            background-image: url({{ url_for('static', filename='Images/log.jpg') }});
+        }
+
+    </style>
+{% endblock %}
+{% include 'Shared/HeaderContent.html' %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div class="card" style="width:400px">
+                <div class="card-body">
+                    {% if data %}
+                        {% for category in data %}
+                            <form action="{{ url_for('editcategory') }}" method="post" enctype="multipart/form-data">
+                            <input type="hidden"  id="idcategory" name="idcategory" value="{{ category.id }}">
+                            <input type="hidden"  id="imagepath" name="imagepath" value="{{ category.imagePath }}">
+                                <div class="form-group">
+                                    <label>Name</label>
+                                    <input type="text" class="form-control" id="namecategory" name="namecategory"
+                                           value="{{ category.name }}">
+                                </div>
+                                <div class="form-group">
+                                    <label>Image</label>
+                                    <img src='{{ category.imagePath }}' style="height:200px;width:200px">
+                                </div>
+                                <div class="form-group">
+                                    <label>Add Image</label>
+                                    <input type="file" class="form-control-file" id="imageCategory"
+                                           name="imageCategory">
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" value="Save" class="btn float-right login_btn">
+                                </div>
+                            </form>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+
+{% endblock %}

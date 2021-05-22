@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}Dishes{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style>
+
+
+    </style>
+{% endblock %}
+{% include 'Shared/HeaderContent.html' %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <a href="createdishes" id="addDishes" class="btn btn-primary float-right">Add Dishes</a>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <div class="row">
+        <div id="bodydishes" class="col-md-12">
+          <table id="showdishes">
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Image</th>
+                    <th>Actions</th>
+                </tr>
+                {% if data %}
+                    {% for dishes in data %}
+                        <tr>
+                            <td>{{ dishes.name }}</td>
+                            <td>{{ dishes.description }}</td>
+                            <td>{{ dishes.categoryname }}</td>
+                            <td>{{ dishes.price }}</td>
+                            <td><img src='{{ dishes.imagePath }}' style="height:200px;width:200px"></td>
+                            <td><span style="height: 34px; width: 34px;" class="btn-ripple animate"></span><a
+                                    href="deletedishes?id={{ dishes.id }}" class="fa fa-trash" data-toggle="tooltip" title=""
+                                    data-original-title="Delete item"></a>       <span style="height: 34px; width: 34px;" class="btn-ripple animate"></span><a
+                                    href="editdishes?id={{ dishes.id }}" class="fa fa-edit" data-toggle="tooltip" title=""
+                                    data-original-title="Edit item"></a></td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Categories{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style>
+        body {
+            background-image: url({{ url_for('static', filename='Images/log.jpg') }});
+        }
+
+    </style>
+{% endblock %}
+{% include 'Shared/HeaderContent.html' %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div class="card" style="width:400px">
+                <div class="card-body">
+                    <h4 class="card-title">Options</h4>
+                    <ul>
+                        <li><h5><a href="managecategories">manage categories</a></h5></li>
+                        <li><h5><a href="managedishes">manage dishes</a></h5></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+
+{% endblock %}

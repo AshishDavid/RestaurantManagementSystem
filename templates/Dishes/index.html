@@ -21,13 +21,15 @@
                 </tr>
                 {% for dishes in data %}
                     <tr>
+                    <input id="idItem" name="idItem" type="hidden" value="">
+                    <input id="descriptionItem" name="descriptionItem" type="hidden" value="">
                         <td>{{ dishes.name }}</td>
                         <td>{{ dishes.description }}</td>
                         <td>{{ dishes.price }}€</td>
-                        <td><img src="{{ dishes.imagePath }}" style="height:200px;width: 200px"></td>
+                        <td><img src="{{ dishes.imagePath }}" style="height:200px;width: 200px"><input id="pathImage" name="pathImage" type="hidden" value=""></td>
                         <td>
                             <button id="CartButton" class="button cart"
-                                    onclick="AddCartItem({{ dishes.id }}, {{ dishes.price }}, '{{ dishes.name }}', '{{ dishes.imagePath }}')">
+                                    onclick="OpenPreviewCart({{ dishes.id }}, {{ dishes.price }}, '{{ dishes.name }}', '{{ dishes.imagePath }}', '{{ dishes.description }}')">
                                 Add To Cart
                             </button>
                         </td>
@@ -68,10 +70,13 @@
                             <label id="TotalItem"></label>
                         </div>
                     </div>
+                    <div class="form-group row">
+                        <img id="previewToCart" src="" style="height:200px;width: 200px; position: relative; left: 140px;">
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button id="addCart" type="button" onclick="AddCartItem()" class="btn btn-primary">Add</button>
                 </div>
             </div>
         </div>

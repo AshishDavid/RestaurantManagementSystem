@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}Categories{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style>
+        body {
+            background-image: url({{ url_for('static', filename='Images/log.jpg') }});
+        }
+
+    </style>
+{% endblock %}
+{% include 'Shared/HeaderContent.html' %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <a href="createcategory" id="addCategory" class="btn btn-primary float-right">Add Category</a>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div id="bodyCategories" class="col-md-8">
+            <table id="showCategories">
+                <tr>
+                    <th>Name</th>
+                    <th>Image</th>
+                    <th>Actions</th>
+                </tr>
+                {% if data %}
+                    {% for category in data %}
+                        <tr>
+                            <td>{{ category.name }}</td>
+                            <td><img src='{{ category.imagePath }}' style="height:200px;width:200px"></td>
+                            <td><span style="height: 34px; width: 34px;" class="btn-ripple animate"></span><a
+                                    href="deletecategory?id={{ category.id }}" class="fa fa-trash" data-toggle="tooltip" title=""
+                                    data-original-title="Delete item"></a>       <span style="height: 34px; width: 34px;" class="btn-ripple animate"></span><a
+                                    href="editcategory?id={{ category.id }}" class="fa fa-edit" data-toggle="tooltip" title=""
+                                    data-original-title="Edit item"></a></td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+            </table>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+
+{% endblock %}

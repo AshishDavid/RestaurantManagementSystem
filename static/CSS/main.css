@@ -191,3 +191,25 @@ label#priceItem {
 label#TotalItem {
     padding-top: 6px;
 }
+
+.row.tableCartDiv {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+i.fa.fa-trash {
+    color: red;
+}
+
+label#valueTot {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+div#bodyCategories {
+    background: white;
+}
+
+div#bodydishes {
+    background: white;
+}
